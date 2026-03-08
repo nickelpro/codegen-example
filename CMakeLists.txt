@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 4.0)
+cmake_minimum_required(VERSION 3.23)
 
 project(codegen-example LANGUAGES CXX)
 
@@ -23,6 +23,7 @@ target_sources(generated
   INTERFACE
     FILE_SET HEADERS
     BASE_DIRS
+      non-generated
       ${CMAKE_CURRENT_BINARY_DIR}
     FILES
       ${CMAKE_CURRENT_BINARY_DIR}/generated.hpp
@@ -32,11 +33,6 @@ add_executable(main)
 target_sources(main
   PRIVATE
     main.cpp
-
-  PRIVATE
-    FILE_SET HEADERS
-    BASE_DIRS
-      non-generated
 )
 target_link_libraries(main
   PRIVATE

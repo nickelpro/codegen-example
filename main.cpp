@@ -1,5 +1,5 @@
-#include <non-generated.hpp>
+#include <generated.hpp>
 
 int main() {
-  return !(b == 5);
+  return !(b == 5 && b == c);
 }

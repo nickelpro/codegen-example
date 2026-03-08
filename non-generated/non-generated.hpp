@@ -1,3 +1,1 @@
-#include <generated.hpp>
-
-inline int& b = a;
+inline int a = 5;

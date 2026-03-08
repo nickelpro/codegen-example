@@ -6,7 +6,8 @@ int main(int argc, char* argv[]) {
   std::string impl = argv[1];
   impl += ".cpp";
   std::ofstream fh(header);
-  fh << "#pragma once\nextern int a;\n";
+  fh << "#pragma once\n#include <non-generated.hpp>\nextern int b;\ninline "
+        "int c = a;\n";
   std::ofstream fi(impl);
-  fi << "int a = 5;";
+  fi << "int b = 5;";
 }
